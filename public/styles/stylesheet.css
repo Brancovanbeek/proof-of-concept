@@ -1,0 +1,24 @@
+:root {
+    /* FONTS */
+    --font-heading: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --font-body: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  
+    /* KLEUREN */
+    --color-blue-primary: #281CE2;          
+    --color-light-blue: #EEF9FD;  
+    --color-pink-light: #F7CDD5;     
+    --color-red-warm: #E2655E;     
+    --color-white: #FFFFFF;
+    --color-black: #000000;
+}
+
+h1{
+    font-size: 32pt;
+    font-weight: bold;
+    line-height: 20;
+}
+
+h2{
+    font-size: 22pt;
+}
+
