@@ -1,24 +1,139 @@
+@font-face {
+    font-family: 'HindGuntur';
+    src: url('/fonts/Hind_Guntur/HindGuntur-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'HindGuntur';
+    src: url('/fonts/Hind_Guntur/HindGuntur-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'HindGuntur';
+    src: url('/fonts/Hind_Guntur/HindGuntur-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'HindGuntur';
+    src: url('/fonts/Hind_Guntur/HindGuntur-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'HindGuntur';
+    src: url('/fonts/Hind_Guntur/HindGuntur-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* Zelfde voor Hind */
+
+@font-face {
+    font-family: 'Hind';
+    src: url('/fonts/Hind/Hind-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Hind';
+    src: url('/fonts/Hind/Hind-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Hind';
+    src: url('/fonts/Hind/Hind-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Hind';
+    src: url('/fonts/Hind/Hind-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Hind';
+    src: url('/fonts/Hind/Hind-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
 :root {
     /* FONTS */
-    --font-heading: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    --font-body: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --primary-font: 'HindGuntur', sans-serif;
+    --secondary-font: 'Hind', sans-serif;
   
-    /* KLEUREN */
-    --color-blue-primary: #281CE2;          
-    --color-light-blue: #EEF9FD;  
-    --color-pink-light: #F7CDD5;     
-    --color-red-warm: #E2655E;     
-    --color-white: #FFFFFF;
-    --color-black: #000000;
+    /* KLEUREN */  
+    --primary-background: #FFFFFF;   
+    --secondary-background: #E6E6E6; 
+    --primary-highlight: #E2655E;  
+    --secondary-highlight: #281CE2;       
+    --primary-text: #000000;
+    --secondary-text: #FFFFFF;
+    ---third-text: #666666;
 }
 
-h1{
-    font-size: 32pt;
-    font-weight: bold;
-    line-height: 20;
+h1 {
+    font-size: clamp(38px, 5vw, 45px);
+    font-family: var(--primary-font);
+    color: var(--primary-text);
+    font-weight: 300;
+}
+  
+h2 {
+    font-size: clamp(34px, 4.5vw, 40px);
+    font-family: var(--primary-font);
+    color: var(--primary-text);
+    font-weight: 300;
+}
+  
+h3 {
+    font-size: clamp(30px, 4vw, 35px);
+    font-family: var(--primary-font);
+    color: var(--primary-text);
+    font-weight: 300;
+}
+  
+h4 {
+    font-size: clamp(26px, 3.5vw, 30px);
+    font-family: var(--primary-font);
+    color: var(--primary-text);
+    font-weight: 300;
+}
+  
+h5 {
+    font-size: clamp(20px, 3vw, 25px);
+    font-family: var(--primary-font);
+    color: var(--primary-text);
+    font-weight: 300;
 }
 
-h2{
-    font-size: 22pt;
+p{
+    font-size: clamp(20px, 3vw, 25px);
+    font-family: var(--primary-font);
+    color: var(--primary-text);
+    font-weight: 300;
+}
+  
+a{
+    text-decoration: none;
+    color: var(--primary-text);
+    font-size: clamp(20px, 3vw, 25px);
+    font-family: var(--primary-font);
+    color: var(--primary-text);
+    font-weight: 300;
 }
 
+.visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
