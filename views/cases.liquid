@@ -1,0 +1,39 @@
+{% assign pageTitle = "Werk - Label Vier" %}
+{% render 'partials/head.liquid', pageTitle: pageTitle %}
+<script src="scripts/script.js" defer></script>
+
+<main>
+{% render 'partials/header.liquid' %}
+
+<section>
+    <h1><strong>Projecten</strong> waar we trots op zijn</h1>
+
+    <ul class="cases-list">
+    {% for case in cases %}
+      <li class="cases-list-item">
+        <a href="/cases/case/{{ case.id }}">
+          <img alt="{{ case.title.rendered }}" src="{{ case.yoast_head_json.og_image[0].url }}" width="450" height="400">
+          {% comment %} {{ case.acf.logo_white }} {% endcomment %}
+          <section> 
+              <h2><span>{{ case.title.rendered }}</span></h2>
+
+              <p>{{ case.content.rendered | strip_html | truncatewords: 32 }}</p>
+
+              <a href="/cases/case/{{ case.id }}">lees verder
+                  <img src="/img/arrow-right-md-svgrepo-com.svg" alt="" width="15" height="15">
+              </a>
+          </section>
+        </a>
+      </li>
+    {% endfor %}
+    </ul> 
+</section>
+
+<section>
+<h3>Wat kunnen we voor jou <strong>betekenen</strong>?</h3>
+<a href="">bekijk de mogelijkheden</a>
+</section>
+
+
+{% render 'partials/footer.liquid' %}
+</main>
