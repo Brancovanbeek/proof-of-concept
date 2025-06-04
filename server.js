@@ -25,15 +25,25 @@ app.set('views', './views')
 
 app.get('/', function (request, response) {
     response.render('index.liquid')
-  })
-
-app.get('/werk', async function (request, response) {
-  
-    response.render('werk.liquid');
 })
 
+app.get('/cases', async function (request, response) {
 
-app.post('werk/contactfomulier', async function (request, response) {
+    const apiResponse = await fetch('https://labelvier.nl/wp-json/wp/v2/cases')
+    const apiResponseJSON = await apiResponse.json() 
+  
+    response.render('cases.liquid', {cases: apiResponseJSON});
+})
+
+app.get('/cases/case/:id', async function (request, response) {
+
+    const apiResponse = await fetch('https://labelvier.nl/wp-json/wp/v2/cases/' + request.params.id)
+    const apiResponseJSON = await apiResponse.json() 
+  
+    response.render('case.liquid', {case: apiResponseJSON});
+})
+
+app.post('cases/contactfomulier', async function (request, response) {
     await fetch('', {
         method: 'POST',
         body: JSON.stringify({
@@ -45,7 +55,7 @@ app.post('werk/contactfomulier', async function (request, response) {
         'Content-Type': 'application/json;charset=UTF-8'
         }
     });
-    response.redirect(303, '/werk');
+    response.redirect(303, '/cases');
 })
 
 // Stel het poortnummer in waar Express op moet gaan luisteren
