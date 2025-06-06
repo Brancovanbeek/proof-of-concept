@@ -10,6 +10,32 @@
     <p>{{ case.content.rendered }}</p>
 </section>
 
+<div>
+  <h3><strong>Deel </strong>dit blogbericht via</h3>
+  <ul>
+    <li>
+      <a href="https://twitter.com/intent/tweet?text={{ case.title.rendered | url_encode }}&url={{ case.link | url_encode }}&via=LabelVier" target="_blank">        
+        <img src="/img/twitter-svgrepo-com.svg" alt="" width="15px" height="15px">
+      </a>
+    </li>
+    <li>
+      <a href="https://www.facebook.com/sharer/sharer.php?u={{ case.link | url_encode }}" target="_blank">
+        <img src="/img/facebook-svgrepo-com.svg" alt="" width="15px" height="15px">
+      </a>
+    </li>
+    <li>
+      <a href="https://wa.me/?text={{ case.title.rendered | url_encode }}%20{{ case.link | url_encode }}" target="_blank">
+        <img src="/img/whatsapp-svgrepo-com.svg"alt="" width="15px" height="15px">
+      </a>
+    </li>
+    <li>
+      <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ case.link | url_encode }}&title={{ case.title.rendered | url_encode }}" target="_blank">
+        <img src="/img/linkedin-svgrepo-com.svg" alt="" width="15px" height="15px">
+      </a>
+    </li>
+  </ul>
+</div>
+
 
 {% render 'partials/footer.liquid' %}
 </main>
