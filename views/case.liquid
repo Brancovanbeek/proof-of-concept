@@ -11,6 +11,28 @@
 </section>
 
 <div>
+  <p>Meer weten over dit project? Neem contact op met de projectleider:</p>
+  {% for user in users %}
+    {% if user.id == 4 %}
+      <div>
+        <a href="{{ user.link }}">
+        
+        <div>
+          <img src="{{ user.avatar_urls.96 }}" alt="{{ user.name }}">
+        </div>
+
+        <div>
+          <p><strong>{{ user.name }}</strong>, projectleider</p>
+          <a href="mailto:vincent@labelvier.nl">vincent@labelvier.nl</a>
+        </div>
+
+        </a>
+      </div>
+    {% endif %}
+  {% endfor %}
+</div>
+
+<div>
   <h3><strong>Deel </strong>dit blogbericht via</h3>
   <ul>
     <li>
