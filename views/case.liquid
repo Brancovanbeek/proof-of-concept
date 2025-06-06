@@ -5,6 +5,13 @@
 <main>
 {% render 'partials/header.liquid' %}
 
+  <nav class="nav-breadcrumbs">
+    <ol class="list-breadcrumbs">
+      <li><a href="/">{{ case.yoast_head_json.schema["@graph"][2].itemListElement[0].name }}</a></li>
+      <li><a href="/cases"> {{ case.yoast_head_json.schema["@graph"][2].itemListElement[1].name }}</a></li>
+      <li>{{ case.yoast_head_json.schema["@graph"][2].itemListElement[2].name }}</li>
+    </ol> 
+  </nav>
 
 <section>
     <p>{{ case.content.rendered }}</p>
