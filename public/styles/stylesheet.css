@@ -89,6 +89,7 @@ h2 {
     font-family: var(--primary-font);
     color: var(--primary-text);
     font-weight: 300;
+    line-height: 1.15;
 }
   
 h3 {
@@ -121,11 +122,24 @@ p{
   
 a{
     text-decoration: none;
-    color: var(--primary-text);
     font-size: clamp(20px, 3vw, 25px);
     font-family: var(--primary-font);
     color: var(--primary-text);
     font-weight: 300;
+}
+
+li{
+    font-size: clamp(20px, 3vw, 25px);
+    font-family: var(--primary-font);
+    color: var(--primary-text);
+    list-style: none;
+    font-weight: 300;
+}
+
+button{
+    background: none;
+    border: none;
+    cursor: pointer;
 }
 
 .visually-hidden {
