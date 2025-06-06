@@ -37,12 +37,14 @@ app.get('/cases', async function (request, response) {
 
 app.get('/cases/case/:id', async function (request, response) {
 
-    const apiResponse = await fetch('https://labelvier.nl/wp-json/wp/v2/cases/' + request.params.id)
-    const apiResponseJSON = await apiResponse.json() 
-  
-    response.render('case.liquid', {case: apiResponseJSON});
-})
+    const caseResponse = await fetch('https://labelvier.nl/wp-json/wp/v2/cases/' + request.params.id);
+    const caseData = await caseResponse.json();
+    
+    const usersResponse = await fetch('https://labelvier.nl/wp-json/wp/v2/users/');
+    const usersData = await usersResponse.json();
 
+    response.render('case.liquid', { case: caseData, users: usersData });
+});
 app.post('cases/contactfomulier', async function (request, response) {
     await fetch('', {
         method: 'POST',

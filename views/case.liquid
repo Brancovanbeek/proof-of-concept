@@ -13,6 +13,44 @@
     </ol> 
   </nav>
 
+  <section>
+    <div>
+      <img alt="{{ case.title.rendered }}" src="{{ case.yoast_head_json.og_image[0].url }}" width="450" height="400">
+    </div>
+
+    <section>
+        <h1>{{ case.title.rendered }}</h1>
+
+        <div>
+            <a href="">Website</a>
+            <a href=""><img src="/img/clock-svgrepo-com.svg" alt="" width="15px" height="15px">Leestijd {{ case.yoast_head_json.twitter_misc["Geschatte leestijd"] }}</a>
+            <a href=""><img src="/img/calendar-days-svgrepo-com.svg" alt="" width="15px" height="15px">{{ case.date_gmt | date: "%-d %m %Y" }}</a>
+        </div>
+
+        <div class="author-swiper">
+        {% for lid in case.acf.case_team %}
+          <div>
+            {% for user in users %}
+            {% if user.id == lid %}
+
+            <a href="">
+              <img src="{{ user.avatar_urls.96 }}" alt="{{ user.name }}">
+            </a>
+
+            <div>
+                  <h3>{{ user.acf.user_data.profile_title }}</h3>
+                  <p>{{ user.acf.user_data.role }}</p>
+            </div>
+
+            {% endif %}
+            {% endfor %}
+          </div>
+        {% endfor %}
+        </div>
+         
+    </section>
+  </section>
+
 <section>
     <p>{{ case.content.rendered }}</p>
 </section>
