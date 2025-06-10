@@ -25,15 +25,15 @@ app.set('views', './views')
 
 app.get('/', function (request, response) {
     response.render('index.liquid')
-})
+});
 
 app.get('/cases', async function (request, response) {
 
-    const apiResponse = await fetch('https://labelvier.nl/wp-json/wp/v2/cases')
-    const apiResponseJSON = await apiResponse.json() 
+    const apiResponse = await fetch('https://labelvier.nl/wp-json/wp/v2/cases?per_page=99');
+    const apiResponseJSON = await apiResponse.json();
   
     response.render('cases.liquid', {cases: apiResponseJSON});
-})
+});
 
 app.get('/cases/case/:id', async function (request, response) {
 
@@ -43,8 +43,9 @@ app.get('/cases/case/:id', async function (request, response) {
     const usersResponse = await fetch('https://labelvier.nl/wp-json/wp/v2/users/');
     const usersData = await usersResponse.json();
 
-    response.render('case.liquid', { case: caseData, users: usersData });
+    response.render('case.liquid', {case: caseData, users: usersData });
 });
+
 app.post('cases/contactfomulier', async function (request, response) {
     await fetch('', {
         method: 'POST',
@@ -58,7 +59,7 @@ app.post('cases/contactfomulier', async function (request, response) {
         }
     });
     response.redirect(303, '/cases');
-})
+});
 
 // Stel het poortnummer in waar Express op moet gaan luisteren
 // Lokaal is dit poort 8000; als deze applicatie ergens gehost wordt, waarschijnlijk poort 80
@@ -67,4 +68,4 @@ app.set('port', process.env.PORT || 8000)
 // Start Express op, gebruik daarbij het zojuist ingestelde poortnummer op
 app.listen(app.get('port'), function () {
   console.log(`Project draait via http://localhost:${app.get('port')}/\n\nSucces deze sprint. En maak mooie dingen! 🙂`)
-})
+});
