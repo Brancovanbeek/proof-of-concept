@@ -4,24 +4,24 @@
     </a>
 
     <div class="blue-box">
-        <button>
-            <img src="/img/hamburger-md-svgrepo-com.svg" alt="" width="30px" height="30px">
-        </button>
+        <a href="#footer-nav" id="toggle-menu-open" class="toggle-menu-open">
+            <img src="/img/hamburger-md-svgrepo-com.svg" alt="" width="50px" height="50px">
+        </a>
 
-        {% comment %} <button>
+        {% comment %} <a id="toggle-menu-close" class="toggle-menu-close">
             <img src="/img/close-md-svgrepo-com.svg" alt="" width="30px" height="30px">
-        </button> {% endcomment %}
+        </a> {% endcomment %}
     </div>
         
     <nav class="header-nav">
-        <ul>
+        <ul class="header-list-nav">
             <li>
                 <a href="">methode</a>
             </li>
-            <li>
+            <li class="diensten-list-parent">
                 <a href="">diensten</a>
-                <img src="/img/caret-down-md-svgrepo-com.svg" alt="" width="15px" height="15px">
-                <ul>
+                <img src="/img/caret-down-md-svgrepo-com.svg" alt="" width="30px" height="30px">
+                <ul class="diensten-list-child">
                     <li><a href="">persona's</a></li>
                     <li><a href="">klantreizen</a></li>
                     <li><a href="">contentstrategie</a></li>
@@ -31,10 +31,10 @@
                     <li><a href="">hosting & support</a></li>
                 </ul>
             </li>
-            <li>
+            <li class="over-ons-list-parent">
                 <a href="">over ons</a>
-                <img src="/img/caret-down-md-svgrepo-com.svg" alt="" width="15px" height="15px">
-                <ul>
+                <img src="/img/caret-down-md-svgrepo-com.svg" alt="" width="30px" height="30px">
+                <ul class="over-ons-list-child">
                     <li><a href="">werken bij</a></li>
                 </ul>
             </li>
@@ -46,21 +46,20 @@
             </li>
         </ul>
 
-        <div>
-            <button>
-                <img src="/img/search-magnifying-glass-svgrepo-com.svg" alt="" width="15px" height="15px">
+        <div class="search-container-nav">
+            <button class="header-search-icon">
+                <img src="/img/search-magnifying-glass-svgrepo-com.svg" alt="" width="30px" height="30px">
             </button>
 
             <form action="">
-                <input type="text">
                 <label class="visually-hidden" for="">zoeken</label>
-
-                <button>
-                    <img src="/img/search-magnifying-glass-svgrepo-com.svg" alt="" width="15px" height="15px">
-                </button>
+                <input type="text" placeholder="Zoeken..">
             </form>
+            <button>
+                    <img src="/img/search-magnifying-glass-svgrepo-com.svg" alt="" width="30px" height="30px">
+            </button>
         </div>
 
-        <a href="">contact</a>
+        <a class="contact-btn-nav" href="">contact</a>
     </nav>
 </header>
