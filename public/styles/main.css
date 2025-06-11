@@ -22,3 +22,27 @@ h2 span {
         color:white;
     }
 }
+.footer-nav{
+    margin-top: 2em;
+    position:relative;
+    background-color: #e6e6e6;
+    padding: 2em;
+}
+
+.footer-nav::before {
+    --kartel-angle:116.5deg;
+    --kartel-width:4em;
+    --kartel-height:1em;
+    
+    content:"";
+    
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:100%;
+    height:var(--kartel-height);
+    
+    background-image:
+      repeating-conic-gradient(at 50% 0, transparent var(--kartel-angle), #e6e6e6 0 calc(360deg - var(--kartel-angle)) ,transparent 0 360deg);
+    background-size:var(--kartel-width) 100%;
+  }
