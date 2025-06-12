@@ -3,7 +3,7 @@
     padding: 0;
     box-sizing: border-box;
 }
-  
+
 /* h2 hover */
 
 h2 span {
@@ -11,9 +11,6 @@ h2 span {
 	background-size:0% 100%;
 	background-repeat:no-repeat;
 	transition:0.5s;
-    -webkit-box-decoration-break: clone;
-    box-decoration-break: clone;
-    padding:0 .25em;
 }
 
 .cases-list-item:hover{
@@ -22,6 +19,104 @@ h2 span {
         color:white;
     }
 }
+
+main{
+    background-color: var(--primary-background);
+
+}
+
+/* cases */
+
+.cases-section{
+    padding: 2em 2em 0 2em;
+    h1{
+        line-height: 1.15;
+    }
+}
+
+.cases-info {
+    padding: 2em 0 2em 0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    h2{
+        line-height: 1.15;
+    }
+    p{
+        line-height: 1.5;
+        margin: 1em 0 1em 0;
+    }
+}
+
+@media (min-width: 750px){
+    .cases-section{
+       padding: 4em 4em 0 4em;
+    }
+}
+@media (min-width: 1300px){
+    .cases-section{
+       padding: 4em 15em 0 15em;
+    }
+}
+
+.cases-img {
+    width: 100%;
+    overflow: hidden;
+    max-height: 300px;
+}
+  
+.cases-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    aspect-ratio: 1;
+}
+
+.cases-list{
+    margin-top: 2em;
+}
+
+.cases-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+  
+@media (min-width: 750px) {
+    .cases-grid {
+      grid-template-columns: 50% 50%;
+    }
+  
+    .cases-list-item:nth-of-type(even) a > div {
+      order: 1;
+    }
+
+    .cases-list-item:nth-of-type(even) a > section {
+        padding: 2em 2em 2em 0;
+    }
+
+    .cases-list-item:nth-of-type(odd) a > section {
+        padding: 2em 0 2em 2em;
+    }
+    .cases-img{
+        max-height: none;
+    }
+}
+
+.cases-detail-link{
+    min-height: initial;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
+    line-height: 1;
+    font-weight: bold;
+
+    img{
+        margin-bottom: auto;
+    }
+}
+
+
 .footer-nav{
     margin-top: 2em;
     position:relative;
