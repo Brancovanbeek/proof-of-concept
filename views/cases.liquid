@@ -28,16 +28,31 @@
 </section>
 
 <nav class="page-switch">
-  <a href="">
-    <img src="/img/arrow-left-white.svg" alt="" width="20px" height="20px">
-  </a>
-  <a class="page-link" href="">1</a>
-  <a class="page-link" href="">2</a>
-  <a class="page-link" href="">3</a>
-  <a href="">
-    <img src="/img/arrow-right-white.svg" alt="" width="20px" height="20px">
-  </a>
-</nav> 
+  <ol>
+    {% if currentPage > 1 %}
+      <li>
+        <a class="arrow" href="/cases/page{{ currentPage | minus: 1 }}">
+          <img src="/img/arrow-left-white.svg" width="25px" height="25px" alt="Vorige pagina">
+        </a>
+      </li>
+    {% endif %}
+
+    {% for pagina in (1..totalPages) %}
+    <li class="{% if pagina == currentPage %}active{% endif %}">
+      <a href="/cases/page{{ pagina }}">{{ pagina }}</a>
+    </li>
+    {% endfor %}
+  
+    {% if currentPage < totalPages %}
+      <li>
+        <a class="arrow" href="/cases/page{{ currentPage | plus: 1 }}">
+          <img src="/img/arrow-right-white.svg" width="25px" height="25px" alt="Volgende pagina">
+        </a>
+      </li>
+    {% endif %}
+  </ol>
+</nav>
+
 
 
 {% render 'partials/footer.liquid' %}
