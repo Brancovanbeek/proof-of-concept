@@ -8,6 +8,23 @@
 <section class="cases-section">
     <h1><strong>Projecten</strong> waar we trots op zijn!</h1>
       <ul class="cases-list">
+      {% for case in cases %}
+        <li class="cases-list-item">
+          <a href="/cases/case/{{ case.id }}" class="cases-grid">
+            <div class="cases-img">
+              <img alt="{{ case.title.rendered }}" src="{{ case.yoast_head_json.og_image[0].url }}">
+            </div>
+            <section class="cases-info"> 
+                <h2><span>{{ case.title.rendered }}</span></h2>
+                <p>{{ case.content.rendered | strip_html | truncatewords: 32 }}</p>
+                <span class="cases-detail-link">
+                    lees verder <img src="/img/arrow-right-black.svg" alt="" width="15" height="15">
+                </span>
+            </section>
+          </a>
+        </li>
+      {% endfor %}
+      </ul> 
 </section>
 
 <nav>
