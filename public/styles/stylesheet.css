@@ -1,66 +1,76 @@
 @font-face {
     font-family: 'HindGuntur';
-    src: url('/fonts/Hind_Guntur/HindGuntur-Light.ttf') format('truetype');
+    src: url('/fonts/Hind_Guntur/hindguntur-light-webfont.woff2') format('woff2'),
+         url('/fonts/Hind_Guntur/HindGuntur-Light.ttf') format('truetype');
     font-weight: 300;
     font-style: normal;
 }
 @font-face {
     font-family: 'HindGuntur';
-    src: url('/fonts/Hind_Guntur/HindGuntur-Regular.ttf') format('truetype');
+    src: url('/fonts/Hind_Guntur/hindguntur-regular-webfont.woff2') format('woff2'),
+         url('/fonts/Hind_Guntur/HindGuntur-Regular.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
 }
 @font-face {
     font-family: 'HindGuntur';
-    src: url('/fonts/Hind_Guntur/HindGuntur-Medium.ttf') format('truetype');
+    src: url('/fonts/Hind_Guntur/hindguntur-medium-webfont.woff2') format('woff2'), 
+         url('/fonts/Hind_Guntur/HindGuntur-Medium.ttf') format('truetype');
     font-weight: 500;
     font-style: normal;
 }
 @font-face {
     font-family: 'HindGuntur';
-    src: url('/fonts/Hind_Guntur/HindGuntur-SemiBold.ttf') format('truetype');
+    src: url('/fonts/Hind_Guntur/hindguntur-semibold-webfont.woff2') format('woff2'), 
+         url('/fonts/Hind_Guntur/HindGuntur-SemiBold.ttf') format('truetype');
     font-weight: 600;
     font-style: normal;
 }
 @font-face {
     font-family: 'HindGuntur';
-    src: url('/fonts/Hind_Guntur/HindGuntur-Bold.ttf') format('truetype');
+    src: url('/fonts/Hind_Guntur/hindguntur-bold-webfont.woff2') format('woff2'), 
+         url('/fonts/Hind_Guntur/HindGuntur-Bold.ttf') format('truetype');
     font-weight: 700;
     font-style: normal;
 }
 
 /* Zelfde voor Hind */
-
 @font-face {
     font-family: 'Hind';
-    src: url('/fonts/Hind/Hind-Light.ttf') format('truetype');
+    src: url('/fonts/Hind/hind-light-webfont.woff2') format('woff2'), 
+         url('/fonts/Hind/Hind-Light.ttf') format('truetype');
     font-weight: 300;
     font-style: normal;
 }
+
 @font-face {
     font-family: 'Hind';
-    src: url('/fonts/Hind/Hind-Regular.ttf') format('truetype');
+    src: url('/fonts/Hind/hind-regular-webfont.woff2') format('woff2'), 
+         url('/fonts/Hind/Hind-Regular.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
 }
 @font-face {
     font-family: 'Hind';
-    src: url('/fonts/Hind/Hind-Medium.ttf') format('truetype');
+    src: url('/fonts/Hind/hind-medium-webfont.woff2') format('woff2'), 
+         url('/fonts/Hind/Hind-Medium.ttf') format('truetype');
     font-weight: 500;
     font-style: normal;
 }
 @font-face {
     font-family: 'Hind';
-    src: url('/fonts/Hind/Hind-SemiBold.ttf') format('truetype');
+    src: url('/fonts/Hind/hind-semibold-webfont.woff2') format('woff2'), 
+         url('/fonts/Hind/Hind-SemiBold.ttf') format('truetype');
     font-weight: 600;
     font-style: normal;
 }
 @font-face {
     font-family: 'Hind';
-    src: url('/fonts/Hind/Hind-Bold.ttf') format('truetype');
+    src: url('/fonts/Hind/hind-bold-webfont.woff2') format('woff2'), 
+         url('/fonts/Hind/Hind-Bold.ttf') format('truetype');
     font-weight: 700;
     font-style: normal;
-}
+} 
 
 :root {
     font-size: 16px;
