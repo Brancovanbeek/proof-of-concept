@@ -27,28 +27,17 @@ app.get('/', function (request, response) {
     response.render('index.liquid')
 });
 
-// const API = 'https://labelvier.nl/wp-json';
-// const APIcases = (API + '/wp/v2/cases?per_page=8');
-
-// app.get(['/cases','/cases/page:page'], async function (request, response) {
-
-//     const apiResponse = await fetch('https://labelvier.nl/wp-json/wp/v2/cases?per_page=99');
-//     const apiResponseJSON = await apiResponse.json();
-  
-//     response.render('cases.liquid', {cases: apiResponseJSON});
-// });
-
 app.get(['/cases', '/cases/page:page'], async function (request, response) {
     // 1. Kijk of er een paginanummer is. Zo niet, begin dan bij pagina 1.
     const page = request.params.page || 1;
   
-    // 2. Maak de URL om cases op te halen van WordPress, met 8 items per pagina
+    // 2. Maak de URL om cases op te halen van de API, met 8 items per pagina
     const url = 'https://labelvier.nl/wp-json/wp/v2/cases?per_page=8&page=' + page;
   
     // 3. Vraag de data op van de API
     const apiResponse = await fetch(url);
   
-    // 4. Zet de data om naar JSON (leesbare JavaScript-data)
+    // 4. Zet de data om naar JSON
     const apiResponseJSON = await apiResponse.json();
   
     // 5. Haal het totaal aantal pagina's op uit de API-header

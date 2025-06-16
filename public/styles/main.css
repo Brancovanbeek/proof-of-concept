@@ -5,7 +5,6 @@
 }
 
 /* h2 hover */
-
 h2 span {
 	background-image:linear-gradient(transparent 14%, black 0 70%, transparent 0);
 	background-size:0% 100%;
@@ -78,7 +77,6 @@ main{
     }
 }
 
-
 .search-container-nav{
     display: flex;
     align-items: center;
@@ -103,8 +101,6 @@ main{
 .open{
     display: block;
 }
-
-
 
 @media (min-width: 900px){
     .header-nav {
@@ -143,6 +139,7 @@ main{
     .diensten-list-parent,  .over-ons-list-parent{
         position: relative;
     }
+
     .diensten-list-child, .over-ons-list-child{
         display: none;
         position: absolute;
@@ -152,6 +149,7 @@ main{
         border: 1px solid #e6e6e6;
         transition: 0.3s;
     }
+
     .diensten-list-parent:hover > .diensten-list-child, 
     .over-ons-list-parent:hover > .over-ons-list-child{
         display: block;
@@ -181,16 +179,34 @@ main{
     }
 }
 
+/* case */
+.list-breadcrumbs{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
 
-/* cases */
-
-.cases-section{
+/* padding */
+.cases-section, .footer-mogelijkheden-section, .page-switch{
     padding: 2em 2em 0 2em;
     h1{
         line-height: 1.15;
     }
 }
 
+@media (min-width: 750px){
+    .cases-section, .footer-mogelijkheden-section, .page-switch{
+       padding: 4em 4em 0 4em;
+    }
+}
+@media (min-width: 1300px){
+    .cases-section, .footer-mogelijkheden-section, .page-switch{
+       padding: 4em 15em 0 15em;
+    }
+}
+
+/* cases */
 .cases-info {
     padding: 2em 0 2em 0;
     display: flex;
@@ -202,17 +218,6 @@ main{
     p{
         line-height: 1.5;
         margin: 1em 0 1em 0;
-    }
-}
-
-@media (min-width: 750px){
-    .cases-section{
-       padding: 4em 4em 0 4em;
-    }
-}
-@media (min-width: 1300px){
-    .cases-section{
-       padding: 4em 15em 0 15em;
     }
 }
 
@@ -273,14 +278,15 @@ main{
     }
 }
 
-
 /* footer */
 .footer-mogelijkheden-section{
-    padding: 2em;
+    margin-bottom: 5em;
+
     h3{
         line-height: 1.15;
         margin-bottom: 1em;
     }
+
     a{
         background-color: var(--primary-highlight);
         color: var(--secondary-text);
@@ -289,9 +295,19 @@ main{
         align-items: center;
         justify-content: center;
         width: fit-content;
+        height: fit-content;
         padding: 0.5em 1em 0.3em 1em;
-    }
+        white-space: nowrap;
 
+    }
+}
+
+@media (min-width: 750px){
+    .footer-mogelijkheden-section{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
 }
 
 .footer-nav{
@@ -301,54 +317,56 @@ main{
     padding: 2em;
 }
 
+/* zigzag border */
 .footer-nav::before {
     --kartel-angle:116.5deg;
     --kartel-width:4em;
     --kartel-height:1em;
     
     content:"";
-    
     position:absolute;
     left:0;
     right:0;
     bottom:100%;
     height:var(--kartel-height);
-    
+
     background-image:
       repeating-conic-gradient(at 50% 0, transparent var(--kartel-angle), #e6e6e6 0 calc(360deg - var(--kartel-angle)) ,transparent 0 360deg);
     background-size:var(--kartel-width) 100%;
 }
 
-/* pagina switchen */
-.page-switch{
+/* pagina navigatie */
+.page-switch {
+    margin-top: 4em;
+    margin-bottom: 4em;
     width: 100%;
     display: flex;
-    justify-content: center;
-    gap: 1em;
-    a{
-        background-color: var(--primary-highlight);
-        color: var(--secondary-text);
-        font-weight: bold;
+    justify-content: flex-start;
+  
+    ol {
+      display: flex;
+      gap: 0.5em;
         
-        &.page-link{
-            display: flex;
-            align-items: center;
-            padding:0 .75em;
+        li{
+            background-color: var(--primary-highlight);
+            padding: 1em;
+        }
+        
+        a{
+            background-color: var(--primary-highlight);
+            color: var(--secondary-text);
 
             @supports (text-box-edge: cap) {
-                display:block;
-                padding:1em;
+                display: block;
                 text-box: trim-both cap alphabetic;
+              }
+
+            img{
+                transform: translateY(25%);
+                
             }
-            
-        }
-
-        &:not(.page-link) {
-            display: flex;
-            /* justify-content: center; */
-            align-items: center;
-            padding:0 .75em;
-        }
+        }  
     }
-
 }
+   
+  
