@@ -245,7 +245,7 @@ h2 span {
 } */
 
 /* padding */
-.cases-section, .footer-mogelijkheden-section, .page-switch{
+main, .footer-mogelijkheden-section{
     padding: 2em 2em 0 2em;
     h1{
         line-height: 1.15;
@@ -253,12 +253,12 @@ h2 span {
 }
 
 @media (min-width: 750px){
-    .cases-section, .footer-mogelijkheden-section, .page-switch{
+    main, .footer-mogelijkheden-section{
        padding: 4em 4em 0 4em;
     }
 }
 @media (min-width: 1300px){
-    .cases-section, .footer-mogelijkheden-section, .page-switch{
+    main, .footer-mogelijkheden-section{
        padding: 4em 15em 0 15em;
     }
 }
@@ -271,6 +271,7 @@ h2 span {
     height: 100%;
     h2{
         line-height: 1.15;
+        word-break: break-all;
     }
     p{
         line-height: 1.5;
@@ -335,8 +336,40 @@ h2 span {
     }
 }
 
-/* footer */
-.footer-mogelijkheden-section{
+/* pagina navigatie */
+.page-switch {
+    margin-top: 4em;
+    margin-bottom: 4em;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+  
+    ol {
+      display: flex;
+      gap: 0.5em;
+        
+        li{
+            background-color: var(--primary-highlight);
+            padding: 1em;
+        }
+        
+        a{
+            background-color: var(--primary-highlight);
+            color: var(--secondary-text);
+
+            @supports (text-box-edge: cap) {
+                display: block;
+                text-box: trim-both cap alphabetic;
+              }
+
+            img{
+                transform: translateY(25%);
+                
+            }
+        }  
+    }
+}
+  
     margin-bottom: 5em;
 
     h3{
