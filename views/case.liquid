@@ -63,18 +63,18 @@
     {{ case.content.rendered }}
   </section>
 
-  <div>
+  <div class="case-projectleider">
     <p>Meer weten over dit project? Neem contact op met de projectleider:</p>
     {% for user in users %}
       {% if user.id == 4 %}
-        <div>
-          <a href="{{ user.link }}">
+        <div class="case-projectleider-info">
+          <a href="{{ user.link }}" class="case-projectleider-link">
           
-          <div>
+          <div class="case-projectleider-img">
             <img src="{{ user.avatar_urls.96 }}" alt="{{ user.name }}">
           </div>
 
-          <div>
+          <div class="case-projectleider-contact">
             <p><strong>{{ user.name }}</strong>, projectleider</p>
             <a href="mailto:vincent@labelvier.nl">vincent@labelvier.nl</a>
           </div>
