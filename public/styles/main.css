@@ -390,12 +390,89 @@ main, .footer-mogelijkheden-section{
     display: flex;
 }
 
-    margin-bottom: 5em;
+/* case hero */
+.case-img {
+    margin-top: 2em;
+    margin-bottom: 2em;
 
-    h3{
-        line-height: 1.15;
-        margin-bottom: 1em;
+
+    img {
+        width: 100%;
+        object-fit: cover;
+        max-height: 100px;
     }
+}
+
+@media (min-width: 400px){
+
+    .case-img {
+        img {  
+            max-height: 200px;
+        }
+    }
+}
+
+@media (min-width: 600px){
+
+    .case-img {
+        img {  
+            max-height: 300px;
+        }
+    }
+}
+
+.case-text-info{
+    margin-top: 0.5em;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 1em;
+
+    li{
+        color: var(--third-text);
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        gap: 0.5em;
+
+        img{
+            display: flex;
+            align-items: center;
+        }
+
+        a{
+            color: var( --primary-highlight);
+        }
+    }
+}
+
+
+.case-team-swiper{
+    overflow: scroll;
+    gap: 1em;
+    margin-top: 2em;
+    margin-bottom: 5em;
+    width: 100%;
+    display: flex;
+
+    div{
+        width: 200px;
+        img{
+            width: 100%;
+        }
+    }
+}
+
+.case-team-info{
+    h3{  
+        margin-bottom: 0.5em;
+        @supports (text-box-edge: cap) {
+            display: block;
+            text-box: trim-both cap alphabetic;
+        }
+
+    }
+}
 
     a{
         background-color: var(--primary-highlight);
