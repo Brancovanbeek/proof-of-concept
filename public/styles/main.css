@@ -473,6 +473,24 @@ main, .footer-mogelijkheden-section{
 
     }
 }
+/* case sociamedia */
+.case-socialmedia{
+    margin-top: 3em;
+}
+
+.case-socialmedia-list{
+    display: flex;
+    gap: 2em;
+    margin-top: 1em;
+    li > a > img{
+        width: 2em;
+        height: 2em;
+    }
+}
+
+
+
+
 
     a{
         background-color: var(--primary-highlight);

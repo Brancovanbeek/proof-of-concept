@@ -81,18 +81,6 @@ app.post("/nieuwsbrief", async function (request, response) {
   
       response.redirect(303, '/cases?nieuwsbrief=success');
 });
-  
-
-
-
-
-
-
-
-
-
-
-
 
 // Stel het poortnummer in waar Express op moet gaan luisteren
 // Lokaal is dit poort 8000; als deze applicatie ergens gehost wordt, waarschijnlijk poort 80
