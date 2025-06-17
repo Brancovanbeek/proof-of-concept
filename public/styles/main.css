@@ -369,4 +369,29 @@ main{
     }
 }
    
+/* load spinner */
+button .loader {
+    display: none;
+    margin-left: 0.5em;
+    border: 2px solid var(--secondary-text);
+    border-top-color: transparent;
+    border-radius: 50%;
+    width: 1em;
+    height: 1em;
+    animation: spin 1s linear infinite;
+  }
+  
+  form.loader .button-text {
+    opacity: 0.5;
+  }
+  
+  form.loader .loader {
+    display: inline-block;
+  }
+  
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+  
+  
   
