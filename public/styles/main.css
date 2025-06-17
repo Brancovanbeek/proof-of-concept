@@ -473,6 +473,32 @@ main, .footer-mogelijkheden-section{
 
     }
 }
+/* case content */
+div[style="width: 61rem; margin: 0 auto;"] {
+    width: 100% !important;
+    margin: 0 !important;
+}
+
+.case-content{
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+
+    img{
+        width: 100%;
+        height: auto;
+    }
+
+    figure video{
+        width: 100%;
+    }
+}
+
+.wp-block-columns {
+    display: flex;
+    gap: 1em;
+}
+
 /* case projectleider */
 .case-projectleider{
     margin-top: 3em;
