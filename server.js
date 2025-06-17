@@ -62,20 +62,37 @@ app.get('/cases/case/:id', async function (request, response) {
     response.render('case.liquid', {case: caseData, users: usersData });
 });
 
-app.post('cases/contactfomulier', async function (request, response) {
-    await fetch('', {
-        method: 'POST',
-        body: JSON.stringify({
-        title: request.body.title,
-        address: request.body.address,
-        colleagues: request.body.colleagues,
-        }),
+app.post("/nieuwsbrief", async function (request, response) {
+    const email = request.body.email;
+
+      await fetch("https://fdnd-agency.directus.app/items/avl_messages", {
+        method: "POST",
         headers: {
-        'Content-Type': 'application/json;charset=UTF-8'
-        }
-    });
-    response.redirect(303, '/cases');
+          "Content-Type": "application/json;charset=UTF-8"
+        },
+        body: JSON.stringify({
+          from: "nieuwsbrief-formulier",
+          for: email,
+          text: "Inschrijving voor nieuwsbrief"
+        })
+      });
+  
+      console.log("Nieuwsbief-inschrijving ontvangen van: " + email);
+  
+      response.redirect(303, '/cases?nieuwsbrief=success');
 });
+  
+
+
+
+
+
+
+
+
+
+
+
 
 // Stel het poortnummer in waar Express op moet gaan luisteren
 // Lokaal is dit poort 8000; als deze applicatie ergens gehost wordt, waarschijnlijk poort 80
