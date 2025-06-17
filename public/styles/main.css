@@ -374,20 +374,20 @@ main, .footer-mogelijkheden-section{
 .list-breadcrumbs{
     width: 100%;
     gap: 0.1em;
+    display: flex;
 
     li, li a{
         
         font-size: 18px;
         color: var(--third-text);
+        :hover{
+            color: var(--primary-highlight);
+        }
     }
 
     li:nth-of-type(1), li:nth-of-type(2) {
         white-space: nowrap;
     }
-}
-
-.list-breadcrumbs{
-    display: flex;
 }
 
 /* case hero */
@@ -445,7 +445,6 @@ main, .footer-mogelijkheden-section{
         }
     }
 }
-
 
 .case-team-swiper{
     overflow: scroll;
@@ -538,65 +537,14 @@ div[style="width: 61rem; margin: 0 auto;"] {
     }
 }
 
-
-
-
-
-    a{
-        background-color: var(--primary-highlight);
-        color: var(--secondary-text);
-        font-weight: bold;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: fit-content;
-        height: fit-content;
-        padding: 0.5em 1em 0.3em 1em;
-        white-space: nowrap;
-
-    }
-}
-
-@media (min-width: 750px){
-    .footer-mogelijkheden-section{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-    }
-}
-
-.footer-nav{
-    margin-top: 2em;
-    position:relative;
-    background-color: #e6e6e6;
-    padding: 2em;
-}
-
-/* zigzag border */
-.footer-nav::before {
-    --kartel-angle:116.5deg;
-    --kartel-width:4em;
-    --kartel-height:1em;
-    
-    content:"";
-    position:absolute;
-    left:0;
-    right:0;
-    bottom:100%;
-    height:var(--kartel-height);
-
-    background-image:
-      repeating-conic-gradient(at 50% 0, transparent var(--kartel-angle), #e6e6e6 0 calc(360deg - var(--kartel-angle)) ,transparent 0 360deg);
-    background-size:var(--kartel-width) 100%;
-}
-
 /* nieuwsbrief */
 .cases-nieuwsbrief{
     display: flex;
     flex-direction: column;
+    align-items: center;
     width: 100%;
     background-color: var(--primary-highlight);
-    padding: 1em;
+    padding: 2em;
     gap: 1.5em;
 
     input{
@@ -638,6 +586,7 @@ div[style="width: 61rem; margin: 0 auto;"] {
 .button-text{
     color: white;
     font-weight: 700;
+    font-size: clamp(1rem, 2.5vw, 1.2em); ;
 }
 
 /* load spinner */
@@ -650,19 +599,99 @@ button .loader {
     width: 1em;
     height: 1em;
     animation: spin 1s linear infinite;
-  }
+}
   
-  form.loader .button-text {
+form.loader .button-text {
     opacity: 0.5;
-  }
+}
   
-  form.loader .loader {
+form.loader .loader {
     display: inline-block;
-  }
+}
   
-  @keyframes spin {
+@keyframes spin {
     to { transform: rotate(360deg); }
-  }
+}
   
+/* footer */
+.footer-mogelijkheden-section{
+    margin-top: 3em;
+    margin-bottom: 5em;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+
+    a{
+        background-color: var(--primary-highlight);
+        color: var(--secondary-text);
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: fit-content;
+        height: fit-content;
+        white-space: nowrap;
+        padding: 1em;
+
+        @supports (text-box-edge: cap) {
+            display: block;
+            text-box: trim-both cap alphabetic;
+        }
+    }
+}
+
+@media (min-width: 750px){
+    .footer-mogelijkheden-section {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+}
+
+.footer-nav{
+    margin-top: 3em;
+    position:relative;
+    background-color: #e6e6e6;
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+.footer-nav-labelvier{
+    margin-top: 4em;
+}
+
+.footer-nav-mail, .footer-nav-cookies{
+    text-decoration: underline;
+}
+
+@media (min-width: 800px){
+    .footer-nav{
+        padding: 4em;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .footer-nav-diensten, .footer-nav-list, .footer-nav-informatie{
+        margin-top: 4em;
+    }
+}
   
-  
+/* zigzag border */
+.footer-nav::before {
+    --kartel-angle:116.5deg;
+    --kartel-width:4em;
+    --kartel-height:1em;
+    
+    content:"";
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:100%;
+    height:var(--kartel-height);
+
+    background-image:
+      repeating-conic-gradient(at 50% 0, transparent var(--kartel-angle), #e6e6e6 0 calc(360deg - var(--kartel-angle)) ,transparent 0 360deg);
+    background-size:var(--kartel-width) 100%;
+}
