@@ -2,59 +2,72 @@
 {% render 'partials/head.liquid', pageTitle: pageTitle %}
 <script src="/scripts/script.js" defer></script>
 
-<main>
 {% render 'partials/header.liquid' %}
+<main>
 
-<section class="cases-section">
-    <h1><strong>Projecten</strong> waar we trots op zijn!</h1>
-      <ul class="cases-list">
-      {% for case in cases %}
-        <li class="cases-list-item">
-          <a href="/cases/case/{{ case.id }}" class="cases-grid">
-              <div class="cases-img">
-                <img alt="{{ case.title.rendered }}" src="{{ case.yoast_head_json.og_image[0].url }}">
-              </div>
+  <section class="cases-section">
+      <h1><strong>Projecten</strong> waar we trots op zijn!</h1>
+        <ul class="cases-list">
+        {% for case in cases %}
+          <li class="cases-list-item">
+            <a href="/cases/case/{{ case.id }}" class="cases-grid">
+                <div class="cases-img">
+                  <img alt="{{ case.title.rendered }}" src="{{ case.yoast_head_json.og_image[0].url }}">
+                </div>
 
-              <section class="cases-info"> 
-                  <h2><span>{{ case.title.rendered }}</span></h2>
-                  <p>{{ case.content.rendered | strip_html | truncatewords: 32 }}</p>
-                  <span class="cases-detail-link">
-                      lees verder <img src="/img/arrow-right-black.svg" alt="" width="15" height="15">
-                  </span>
-              </section>
-            </a>
-          </li>
+                <section class="cases-info"> 
+                    <h2><span>{{ case.title.rendered }}</span></h2>
+                    <p>{{ case.content.rendered | strip_html | truncatewords: 32 }}</p>
+                    <span class="cases-detail-link">
+                        lees verder <img src="/img/arrow-right-black.svg" alt="" width="15" height="15">
+                    </span>
+                </section>
+              </a>
+            </li>
+        {% endfor %}
+        </ul> 
+  </section>
+
+  <nav class="page-switch">
+    <ol>
+      {% if currentPage > 1 %}
+        <li>
+          <a class="arrow" href="/cases/page{{ currentPage | minus: 1 }}">
+            <img src="/img/arrow-left-white.svg" width="25px" height="25px" alt="Vorige pagina">
+          </a>
+        </li>
+      {% endif %}
+
+      {% for pagina in (1..totalPages) %}
+      <li class="{% if pagina == currentPage %}active{% endif %}">
+        <a href="/cases/page{{ pagina }}">{{ pagina }}</a>
+      </li>
       {% endfor %}
-      </ul> 
-</section>
+    
+      {% if currentPage < totalPages %}
+        <li>
+          <a class="arrow" href="/cases/page{{ currentPage | plus: 1 }}">
+            <img src="/img/arrow-right-white.svg" width="25px" height="25px" alt="Volgende pagina">
+          </a>
+        </li>
+      {% endif %}
+    </ol>
+  </nav>
 
-<nav class="page-switch">
-  <ol>
-    {% if currentPage > 1 %}
-      <li>
-        <a class="arrow" href="/cases/page{{ currentPage | minus: 1 }}">
-          <img src="/img/arrow-left-white.svg" width="25px" height="25px" alt="Vorige pagina">
-        </a>
-      </li>
-    {% endif %}
-
-    {% for pagina in (1..totalPages) %}
-    <li class="{% if pagina == currentPage %}active{% endif %}">
-      <a href="/cases/page{{ pagina }}">{{ pagina }}</a>
-    </li>
-    {% endfor %}
+  <div class="cases-nieuwsbrief">
+    <h3>Schrijf je in voor de <strong>nieuwsbrief!</strong></h3>
   
-    {% if currentPage < totalPages %}
-      <li>
-        <a class="arrow" href="/cases/page{{ currentPage | plus: 1 }}">
-          <img src="/img/arrow-right-white.svg" width="25px" height="25px" alt="Volgende pagina">
-        </a>
-      </li>
-    {% endif %}
-  </ol>
-</nav>
+    <form action="/nieuwsbrief" method="POST" data-enhanced="form">
+        <label for="email" class="visually-hidden">E-mailadres</label>
+        <input type="email" id="email" name="email" placeholder="E-mailadres" required>
+        <button type="submit">
+            <span class="button-text">Inschrijven</span>
+            <span class="loader"></span>
+        </button>
+    </form>
+  </div>
 
-
+</main>
 
 {% render 'partials/footer.liquid' %}
 
