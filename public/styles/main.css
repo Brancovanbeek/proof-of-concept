@@ -370,6 +370,26 @@ main, .footer-mogelijkheden-section{
     }
 }
   
+/* case */
+.list-breadcrumbs{
+    width: 100%;
+    gap: 0.1em;
+
+    li, li a{
+        
+        font-size: 18px;
+        color: var(--third-text);
+    }
+
+    li:nth-of-type(1), li:nth-of-type(2) {
+        white-space: nowrap;
+    }
+}
+
+.list-breadcrumbs{
+    display: flex;
+}
+
     margin-bottom: 5em;
 
     h3{
