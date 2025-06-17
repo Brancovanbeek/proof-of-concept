@@ -12,54 +12,54 @@
             <img src="/img/close-md-svgrepo-com.svg" alt="" width="30px" height="30px">
         </a> {% endcomment %}
     </div>
-        
+
     <nav class="header-nav">
-        <ul class="header-list-nav">
-            <li>
-                <a href="">methode</a>
-            </li>
-            <li class="diensten-list-parent">
-                <a href="">diensten</a>
-                <img src="/img/caret-down-md-svgrepo-com.svg" alt="" width="30px" height="30px">
-                <ul class="diensten-list-child">
-                    <li><a href="">persona's</a></li>
-                    <li><a href="">klantreizen</a></li>
-                    <li><a href="">contentstrategie</a></li>
-                    <li><a href="">ux design</a></li>
-                    <li><a href="">ui design</a></li>
-                    <li><a href="">ontwikkeling</a></li>
-                    <li><a href="">hosting & support</a></li>
-                </ul>
-            </li>
-            <li class="over-ons-list-parent">
-                <a href="">over ons</a>
-                <img src="/img/caret-down-md-svgrepo-com.svg" alt="" width="30px" height="30px">
-                <ul class="over-ons-list-child">
-                    <li><a href="">werken bij</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="">werk</a>
-            </li>
-            <li>
-                <a href="">blog</a>
-            </li>
-        </ul>
 
         <div class="search-container-nav">
-            <button class="header-search-icon">
-                <img src="/img/search-magnifying-glass-svgrepo-com.svg" alt="" width="30px" height="30px">
-            </button>
-
-            <form action="">
-                <label class="visually-hidden" for="">zoeken</label>
-                <input type="text" placeholder="Zoeken..">
+            <form class="search-nav" action="">
+                <label class="visually-hidden" for="search">zoeken</label>
+                <input id="search" type="text" placeholder="Zoeken.." name="search">
+                <button type="submit">
+                    <img src="/img/search-magnifying-glass-svgrepo-com.svg" alt="zoekknop" width="30" height="30">
+                </button>
             </form>
-            <button>
-                    <img src="/img/search-magnifying-glass-svgrepo-com.svg" alt="" width="30px" height="30px">
-            </button>
         </div>
+        
+        <ul class="header-list">
+            <li class="header-list-item"><a href="/methode"><span>methode</span></a></li>
 
-        <a class="contact-btn-nav" href="">contact</a>
-    </nav>
+            <li class="header-list-item">
+                <input type="checkbox" id="diensten-toggle" class="dropdown">
+
+                <label for="diensten-toggle" class="dropdown-link dropdown-btn"><span>diensten</span>
+                    <img src="/img/caret-down-md-svgrepo-com.svg" alt="submenu openen" width="20" height="20">
+                </label>
+
+                <ul class="sub-menu">
+                    <li class="sub-menu-item"><a href=""><span>persona's</span></a></li>
+                    <li class="sub-menu-item"><a href=""><span>klantenreizen</span></a></li>
+                    <li class="sub-menu-item"><a href=""><span>contentstrategie</span></a></li>
+                    <li class="sub-menu-item"><a href=""><span>ux design</span></a></li>
+                    <li class="sub-menu-item"><a href=""><span>ui design</span></a></li>
+                    <li class="sub-menu-item"><a href=""><span>ontwikkeling</span></a></li>
+                    <li class="sub-menu-item"><a href=""><span>hosting & support</span></a></li>
+                </ul>
+            </li>
+
+            <li class="header-list-item">
+                <input type="checkbox" id="overons-toggle" class="dropdown">
+
+                <label for="overons-toggle" class="dropdown-link dropdown-btn"><span>over ons</span>
+                    <img src="/img/caret-down-md-svgrepo-com.svg" alt="submenu openen" width="20" height="20">
+                </label>
+
+                <ul class="sub-menu">
+                    <li class="sub-menu-item"><a href="/werken-bij">werken bij</a></li>
+                </ul>
+            </li>
+
+            <li class="header-list-item"><a href="/werk"><span>werk</span></a></li>
+            <li class="header-list-item"><a href="/blog"><span>blog</span></a></li>
+            <li class="header-list-item"><a href="/contact"><span>contact</span></a></li>
+        </ul>
 </header>
