@@ -2,44 +2,52 @@
 {% render 'partials/head.liquid', pageTitle: pageTitle %}
 <script src="scripts/script.js" defer></script>
 
-<main>
 {% render 'partials/header.liquid' %}
+<main>
 
   <nav class="nav-breadcrumbs">
     <ol class="list-breadcrumbs">
-      <li><a href="/">{{ case.yoast_head_json.schema["@graph"][2].itemListElement[0].name }}</a></li>
-      <li><a href="/cases"> {{ case.yoast_head_json.schema["@graph"][2].itemListElement[1].name }}</a></li>
+      <li><a href="/">{{ case.yoast_head_json.schema["@graph"][2].itemListElement[0].name }}</a> » </li>
+      <li><a href="/cases"> {{ case.yoast_head_json.schema["@graph"][2].itemListElement[1].name }}</a> » </li>
       <li>{{ case.yoast_head_json.schema["@graph"][2].itemListElement[2].name }}</li>
     </ol> 
   </nav>
 
-  <section>
-    <div>
+  <section class="case-hero">
+    <div class="case-img">
       <img alt="{{ case.title.rendered }}" src="{{ case.yoast_head_json.og_image[0].url }}" width="450" height="400">
     </div>
 
-    <section>
+    <section class="case-text">
       <h1>{{ case.title.rendered }}</h1>
 
-      <div>
-          <a href="">Website</a>
-          <a href=""><img src="/img/clock-svgrepo-com.svg" alt="" width="15px" height="15px">Leestijd {{ case.yoast_head_json.twitter_misc["Geschatte leestijd"] }}</a>
-          <a href=""><img src="/img/calendar-days-svgrepo-com.svg" alt="" width="15px" height="15px">{{ case.date_gmt | date: "%-d %m %Y" }}</a>
-      </div>
+      <ul class="case-text-info">
+        <li><a href="">Website</a></li>
 
-      <div class="author-swiper">
+        <li>
+          <img src="/img/clock-svgrepo-com.svg" alt="" width="25px" height="25px"> 
+          Leestijd {{ case.yoast_head_json.twitter_misc["Geschatte leestijd"] }}
+        </li>
+
+        <li>
+          <img src="/img/calendar-days-svgrepo-com.svg" alt="" width="25px" height="25px">
+          {{ case.date_gmt | date: "%-d %m %Y" }}
+        </li>
+      </ul>
+
+      <div class="case-team-swiper">
         {% for lid in case.acf.case_team %}
         <div>
           {% for user in users %}
           {% if user.id == lid %}
 
-          <a href="">
+          <a href="" class="case-team-img">
             <img src="{{ user.avatar_urls.96 }}" alt="{{ user.name }}">
           </a>
 
-          <div>
-                <h3>{{ user.acf.user_data.profile_title }}</h3>
-                <p>{{ user.acf.user_data.role }}</p>
+          <div class="case-team-info">
+            <h3><strong>{{ user.acf.user_data.profile_title }}</strong></h3>
+            <p>{{ user.acf.user_data.role }}</p>
           </div>
 
           {% endif %}
@@ -51,8 +59,8 @@
     </section>
   </section>
 
-  <section>
-      <p>{{ case.content.rendered }}</p>
+  <section class="case-content"> 
+    {{ case.content.rendered }}
   </section>
 
   <div>
@@ -103,5 +111,5 @@
     </ul>
   </div>
 
-{% render 'partials/footer.liquid' %}
 </main>
+{% render 'partials/footer.liquid' %}
