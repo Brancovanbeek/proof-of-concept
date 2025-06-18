@@ -695,3 +695,14 @@ form.loader .loader {
       repeating-conic-gradient(at 50% 0, transparent var(--kartel-angle), #e6e6e6 0 calc(360deg - var(--kartel-angle)) ,transparent 0 360deg);
     background-size:var(--kartel-width) 100%;
 }
+
+.cases-detail-link img{
+    transition: 0.5s ease-in-out;
+}
+
+.cases-list-item:hover{
+    .cases-detail-link img{
+        transform: translateX(100%);
+    }
+}
+
