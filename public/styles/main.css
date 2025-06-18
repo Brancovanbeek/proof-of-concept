@@ -4,6 +4,14 @@
     box-sizing: border-box;
 }
 
+.home-link{
+    font-weight: 700;
+    font-size: 50px;
+    span{
+        color: var(--primary-highlight);
+    }
+}
+
 /* h2 hover */
 h2 span {
 	background-image:linear-gradient(transparent 14%, black 0 70%, transparent 0);
