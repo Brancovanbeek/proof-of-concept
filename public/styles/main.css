@@ -405,7 +405,13 @@ main, .footer-mogelijkheden-section{
     }
 }
 
+
+
 /* case hero */
+
+.case-text h1{
+    word-break: break-all;
+}
 .case-img {
     margin-top: 2em;
     margin-bottom: 2em;
