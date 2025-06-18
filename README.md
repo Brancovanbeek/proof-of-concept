@@ -1,4 +1,4 @@
-# Uitgebreide Beschrijving van Mijn Project: Nabouwen van de Label Vier Website
+Mijn Project: Nabouwen van de Label Vier Website
 
 ## Introductie
 
@@ -10,6 +10,35 @@ Ik heb twee belangrijke pagina’s gebouwd:
 
 1. De overzichtspagina met alle cases  
 2. De detailpagina van één case
+
+
+<table>
+  <tr>
+    <th>Detailpagina Mobile</th>
+    <th>Detailpagina Desktop</th>
+  </tr>
+  <tr>
+    <td>
+       <img src="https://github.com/user-attachments/assets/e42f9ec3-a9da-4b4a-8cfd-9b2c52e7f0cc" width="200">
+    </td>
+    <td>
+      <img src="https://github.com/user-attachments/assets/54a7b230-6365-4836-8f79-924f1be624e5" width="400">
+    </td>
+  </tr>
+  <tr>
+    <th>Cases overzicht Mobile</th>
+    <th>Cases overzicht Desktop</th>
+  </tr>
+  <tr>
+    <td>
+      <img src="https://github.com/user-attachments/assets/2cc6e976-2c24-4560-8f26-bcc99589bf0b" width="200">
+    </td>
+    <td>
+     <img src="https://github.com/user-attachments/assets/89180681-98de-4502-bcc5-0b9f8d892d74" width="400">
+    </td>
+  </tr>
+</table>
+
 
 ### Overzichtspagina met cases
 
