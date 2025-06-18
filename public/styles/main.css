@@ -43,7 +43,7 @@ h2 span {
     bottom: 0;
     background-color: var(--primary-background);
     display: none;
-    padding: 5em;
+    padding: 3em;
     overflow-y: scroll;
     z-index: 999;
 }
@@ -111,6 +111,10 @@ h2 span {
     background: none;
     border: none;
     cursor: pointer;
+}
+
+.header-list{
+    margin-top: 4em;
 }
 
 /* dropdown */
@@ -350,12 +354,22 @@ main, .footer-mogelijkheden-section{
         
         li{
             background-color: var(--primary-highlight);
-            padding: 1em;
         }
+
+        li:hover{
+            background-size:100% 100%;
+            color:white;
+        }
+
         
         a{
             background-color: var(--primary-highlight);
             color: var(--secondary-text);
+            font-weight: bold;
+            padding: 1em;
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
 
             @supports (text-box-edge: cap) {
                 display: block;
@@ -366,6 +380,7 @@ main, .footer-mogelijkheden-section{
                 transform: translateY(25%);
                 
             }
+            
         }  
     }
 }
@@ -696,8 +711,10 @@ form.loader .loader {
     background-size:var(--kartel-width) 100%;
 }
 
+/* pleasurable */
+/* pijl */
 .cases-detail-link img{
-    transition: 0.5s ease-in-out;
+    transition: 0.3s ease-in-out;
 }
 
 .cases-list-item:hover{
