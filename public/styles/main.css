@@ -351,7 +351,7 @@ main, .footer-mogelijkheden-section{
 /* pagina navigatie */
 .page-switch {
     margin-top: 4em;
-    margin-bottom: 4em;
+    margin-bottom: 5em;
     width: 100%;
     display: flex;
     justify-content: flex-start;
