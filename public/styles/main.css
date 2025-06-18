@@ -706,6 +706,11 @@ form.loader .loader {
     }
 }
 
+/* active nav*/
+li.active, li.active a{       
+    background-color: var(--secondary-highlight) !important;  
+}
+
 /* red-btn */
 .red-btn {
     background-color: var(--primary-highlight);
@@ -736,3 +741,4 @@ form.loader .loader {
     &:hover {
         color: var(--primary-highlight);
     }
+}
