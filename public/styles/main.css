@@ -661,6 +661,7 @@ form.loader .loader {
         height: fit-content;
         white-space: nowrap;
         padding: 1em;
+        margin-top: 1em;
 
         @supports (text-box-edge: cap) {
             display: block;
@@ -674,6 +675,9 @@ form.loader .loader {
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
+      a{
+        margin: 0;
+      }
     }
 }
 
