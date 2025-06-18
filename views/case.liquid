@@ -31,9 +31,7 @@
 
         <li>
           <img src="/img/calendar-days-svgrepo-com.svg" alt="" width="25px" height="25px">
-          {% comment %} {{ case.date_gmt | date: "%-d %m %Y" }} {% endcomment %}
-
-          datum
+          {{ case.date_gmt | date: "%-d %m %Y" }}
         </li>
       </ul>
 
