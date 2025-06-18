@@ -19,7 +19,7 @@
                     <h2><span>{{ case.title.rendered }}</span></h2>
                     <p>{{ case.content.rendered | strip_html | truncatewords: 32 }}</p>
                     <span class="cases-detail-link">
-                        lees verder <img src="/img/arrow-right-black.svg" alt="" width="15" height="15">
+                        lees verder <img src="/img/arrow-right-black.svg" alt="" width="25" height="25">
                     </span>
                 </section>
               </a>
@@ -32,7 +32,7 @@
     <ol>
       {% if currentPage > 1 %}
         <li>
-          <a class="arrow" href="/cases/page{{ currentPage | minus: 1 }}">
+          <a class="arrow red-btn" href="/cases/page{{ currentPage | minus: 1 }}">
             <img src="/img/arrow-left-white.svg" width="25px" height="25px" alt="Vorige pagina">
           </a>
         </li>
@@ -40,13 +40,13 @@
 
       {% for pagina in (1..totalPages) %}
       <li class="{% if pagina == currentPage %}active{% endif %}">
-        <a href="/cases/page{{ pagina }}">{{ pagina }}</a>
+        <a class="red-btn" href="/cases/page{{ pagina }}">{{ pagina }}</a>
       </li>
       {% endfor %}
     
       {% if currentPage < totalPages %}
         <li>
-          <a class="arrow" href="/cases/page{{ currentPage | plus: 1 }}">
+          <a class="arrow red-btn" href="/cases/page{{ currentPage | plus: 1 }}">
             <img src="/img/arrow-right-white.svg" width="25px" height="25px" alt="Volgende pagina">
           </a>
         </li>
@@ -123,5 +123,4 @@
 
     form.reset();
 });
-
 </script>

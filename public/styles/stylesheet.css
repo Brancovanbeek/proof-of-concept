@@ -90,7 +90,8 @@
     --primary-background: #FFFFFF;   
     --secondary-background: #E6E6E6; 
     --primary-highlight: #E2655E;  
-    --secondary-highlight: #281CE2;       
+    --secondary-highlight: #281CE2;  
+    --hover-highlight: #F7CDD5;
     --primary-text: #000000;
     --secondary-text: #FFFFFF;
     --third-text: #666666;

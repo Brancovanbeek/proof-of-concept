@@ -706,3 +706,33 @@ form.loader .loader {
     }
 }
 
+/* red-btn */
+.red-btn {
+    background-color: var(--primary-highlight);
+    color: var(--secondary-text);
+    font-weight: 600;
+    transition: .5s;
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+     padding: 1.05em 1.2em 1.05em 1.2em;
+ 
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100%;
+        background-color: var(--hover-highlight);
+        z-index: -1;
+        transition: .5s;
+    }
+ 
+    &:hover::before {
+        width: 100%;
+    }
+ 
+    &:hover {
+        color: var(--primary-highlight);
+    }
